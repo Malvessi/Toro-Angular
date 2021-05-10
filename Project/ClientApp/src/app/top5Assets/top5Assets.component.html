@@ -1,0 +1,22 @@
+<h1 id="tableLabel">Assets</h1>
+
+<p>Top 5!</p>
+
+<p *ngIf="!list"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="list">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Transactions</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let list of list">
+      <td>{{ list.Name}}</td>
+      <td>{{ list.Transactions }}</td>
+      <td>{{ list.Value | currency:'BRL' }}</td>
+    </tr>
+  </tbody>
+</table>
